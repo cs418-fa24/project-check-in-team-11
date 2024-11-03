@@ -3,8 +3,8 @@ import json
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
-CLIENT_ID = '5136eebddeac4d10b82bb55a64dcf00e'
-CLIENT_SECRET = 'a165c457e8e34acd97afa9e2cb812234'
+CLIENT_ID = ''
+CLIENT_SECRET = ''
 REDIRECT_URI = 'http://localhost:8888/callback'
 
 moods = {

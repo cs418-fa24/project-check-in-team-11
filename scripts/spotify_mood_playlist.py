@@ -8,8 +8,8 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
 # TODO insert info same as library.py...
-CLIENT_ID = '5136eebddeac4d10b82bb55a64dcf00e'
-CLIENT_SECRET = 'a165c457e8e34acd97afa9e2cb812234'
+CLIENT_ID = ''
+CLIENT_SECRET = ''
 REDIRECT_URI = 'http://localhost:8888/callback'
 
 moods = {
@@ -68,7 +68,7 @@ for mood, p_id in moods.items():
 
     #TODO make sure to enter the number corresponding to your data
     num = 1
-    with open(f'spotify_{mood.lower()}_{num}.json', 'w') as file:
+    with open(f'../raw/spotify_{mood.lower()}_{num}.json', 'w') as file:
         json.dump(tracks, file, indent=4)
 
     file.close()
