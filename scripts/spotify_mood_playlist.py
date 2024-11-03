@@ -68,7 +68,7 @@ for mood, p_id in moods.items():
 
     #TODO make sure to enter the number corresponding to your data
     num = 1
-    with open(f'spotify_{mood.lower()}_{num}.json', 'w') as file:
+    with open(f'../raw/spotify_{mood.lower()}_{num}.json', 'w') as file:
         json.dump(tracks, file, indent=4)
 
     file.close()
