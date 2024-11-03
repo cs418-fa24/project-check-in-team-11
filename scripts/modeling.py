@@ -26,6 +26,8 @@ from sklearn.cluster import (
     DBSCAN, OPTICS, Birch, AffinityPropagation
 )
 
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 import json
 import pandas as pd
 
@@ -50,7 +52,29 @@ for mood in moods:
 
 final_df = pd.concat(dfs, ignore_index=True)
 
-final_df.to_csv("training.csv")
+#processing
+drop = ['name', 'id']
+final_df = final_df.drop(columns=drop)
+
+#splitting
+X = final_df.iloc[:, 0:13]
+Y = final_df.iloc[:, 13]
+
+xtrain, xtest, ytrain, ytest = train_test_split(X, Y, test_size=.2, random_state=1)
+
+# train
+forest = RandomForestClassifier()
+forest.fit(xtrain, ytrain)
+
+# optimization w/ cross validation
+
+# test
+print(forest.score(xtest, ytest))
+
+
+
+
+
 
 
 
