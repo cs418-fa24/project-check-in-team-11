@@ -8,8 +8,8 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
 # TODO insert info same as library.py...
-CLIENT_ID = ''
-CLIENT_SECRET = ''
+CLIENT_ID = '64dd095a72fe4616b722fb822eba1495'
+CLIENT_SECRET = '2c7dff3b744f4c4ea26e4f528fb81351'
 REDIRECT_URI = 'http://localhost:8888/callback'
 
 moods = {
