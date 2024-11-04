@@ -66,10 +66,46 @@ xtrain, xtest, ytrain, ytest = train_test_split(X, Y, test_size=.2, random_state
 forest = RandomForestClassifier()
 forest.fit(xtrain, ytrain)
 
-# optimization w/ cross validation
+# score
+# print(forest.score(xtest, ytest))
 
-# test
-print(forest.score(xtest, ytest))
+################################################################################################
+#analysis
+
+import json
+import pandas as pd
+
+dfs = []
+
+files = [
+    f'../raw/liked_songs_1.json',
+    # f'../raw/liked_songs_2.json',
+    f'../raw/liked_songs_3.json',
+    f'../raw/liked_songs_4.json',
+    # f'../raw/liked_songs_5.json',
+    # f'../raw/liked_songs_6.json',
+]
+
+for file in files:
+    with open(file, 'r') as fileio:
+        df = pd.DataFrame(json.load(fileio))
+        dfs.append(df)
+
+dfs[0].to_csv('testing.csv')
+
+#processing
+drop = ['name', 'id']
+for df in dfs:
+    df = df.drop(columns=drop)
+
+predictions = []
+
+for df in dfs:
+    predictions.append(forest.predict(df.iloc[:, :]))
+
+
+
+
 
 
 
