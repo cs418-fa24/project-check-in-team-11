@@ -11,7 +11,7 @@ moods = {
     'HAPPY': '37i9dQZF1EVJSvZp5AOML2',
     'SAD': '37i9dQZF1EIh4v230xvJvd',
     'CHILL': '37i9dQZF1EIdNTvkcjcOzJ',
-    'ENERGETIC': '37i9dQZF1EIcVD7Tg8a0MY'
+    'ENERGETIC': '37i9dQZF1EIcVDa7Tg8a0MY'
 }
 
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
