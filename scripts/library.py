@@ -58,6 +58,7 @@ while results:
     results = sp.next(results)
 
 #TODO change the number so you know which files are yours
-num = 1
+num = 5
 with open(f'../raw/liked_songs_{num}.json', 'w') as json_file:
     json.dump(liked_songs, json_file, indent=4)
+
