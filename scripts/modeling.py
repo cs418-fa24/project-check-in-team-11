@@ -39,11 +39,11 @@ dfs = []
 for mood in moods:
     files = [
         f'../raw/spotify_{mood}_1.json',
-        # f'../raw/spotify_{mood}_2.json',
+        f'../raw/spotify_{mood}_2.json',
         f'../raw/spotify_{mood}_3.json',
         f'../raw/spotify_{mood}_4.json',
         f'../raw/spotify_{mood}_5.json',
-        # f'../raw/spotify_{mood}_6.json',
+        f'../raw/spotify_{mood}_6.json',
     ]
 
     for file in files:
